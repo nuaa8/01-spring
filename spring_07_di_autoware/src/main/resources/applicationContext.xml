@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl"/>
+<!--    <bean  class="com.itheima.dao.impl.BookDaoImpl"/>  &lt;!&ndash;按类型装配可以不起  id&ndash;&gt;-->
+<!--    <bean id="bookDao1" class="com.itheima.dao.impl.BookDaoImpl"/>-->
+
+    <!--autowire属性：开启自动装配，通常使用按类型装配-->
+    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl" autowire="byType"/>  <!-- 按类型装配时，如果一个一个实现类有2个id，就会报错。此时，可以使用按名称装配-->
+
+    <!--autowire属性：开启自动装配，通常使用按名称装配-->
+<!--    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl" autowire="byName"/>-->
+
+</beans>
